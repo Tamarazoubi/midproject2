@@ -13,16 +13,14 @@ class _loginclassState extends State<loginclass> {
     return Scaffold(
     backgroundColor:     Color(0xFFEfaebd6),
       appBar: AppBar(
+        backgroundColor: Color(0xFFEfaebd6),
 
+        title: Row(
+          children: [Padding(
+            padding: const EdgeInsets.all(50),
 
-    backgroundColor: Color(0xFFEfaebd6),    title: Padding(
-          padding: const EdgeInsets.all(50),
-          child: Center(
-            child: Card(
-
-
-            ),
           ),
+      ]
         ),
         ),
     body: Center(
@@ -35,7 +33,7 @@ class _loginclassState extends State<loginclass> {
           padding: const EdgeInsets.all(8.0),
           child: Card(
           color:   Color(0xFFEE7BC91),
-            child: Text(" MT Coffee",
+            child: Text(" Ajda Coffee",
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
@@ -48,6 +46,10 @@ class _loginclassState extends State<loginclass> {
         Lottie.network('https://lottie.host/34b9dadc-5986-4637-a907-4f7610c857c0/eCupwR5BI6.json'),
         ElevatedButton(onPressed: () {
           Navigator.of(context).pushNamed('routescreen2');
+          IconButton(
+              onPressed:(){
+                Navigator.pop(context);
+              } , icon: Icon(Icons.arrow_back));
         }
           ,
           style: ElevatedButton.styleFrom(
@@ -67,6 +69,49 @@ class _loginclassState extends State<loginclass> {
         ),
       ),
     ),
+      drawer: Drawer(
+        backgroundColor: Color(0xFFEfaebd6),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 100,
+            ),
+            InkWell(
+                onTap: (){
+                  Navigator.of(context).pushNamed('routescreen2');
+                },
+                child: Listtilefun(Icon(Icons.app_registration), Text("Registration"),
+
+            )
+
+
+            ),
+            InkWell(
+
+              onTap: (){
+
+                Navigator.of(context).pushNamed('routescreen3');
+              },
+
+                child
+
+                : Listtilefun(Icon(Icons.local_drink), Text("Drink"))),
+            InkWell(
+                onTap: (){
+                  Navigator.of(context).restorablePushReplacementNamed('routescreen4');
+                },
+
+
+                child: Listtilefun(Icon(IconData(0xf869, fontFamily: 'MaterialIcons')), Text("Sweet"))),
+          ],
+        ),
+      ),
+    );
+  }
+  Widget Listtilefun(Icon c,Text tx){
+    return ListTile(
+      leading:c ,
+      title:tx ,
     );
   }
 }

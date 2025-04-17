@@ -27,10 +27,11 @@ class _homepageClassState extends State<homepageClass> {
       'icedlatte(3jd)'
     ];
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor:     Color(0xFFEfaebd6),
+      ),
       backgroundColor:     Color(0xFFEfaebd6),
-      body: SafeArea(child:
-
-      Padding(
+      body: Padding(
         padding: const EdgeInsets.all(10),
         child: Column(
 
@@ -109,7 +110,7 @@ class _homepageClassState extends State<homepageClass> {
             ),
             ElevatedButton(onPressed: (){
 
-              Navigator.of(context).pushNamed('routescreen5');
+              Navigator.of(context).pushNamed('routescreen4');
 
 
 
@@ -127,7 +128,6 @@ class _homepageClassState extends State<homepageClass> {
          )
           ],
         ),
-      )
       ),
     );
   }

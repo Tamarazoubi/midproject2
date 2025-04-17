@@ -28,14 +28,14 @@ class _myAppState extends State<myApp> {
     return MaterialApp(
       routes: {
         'routescreen2':(context)=>textfeildclass(),
-        'routescreen3':(context)=>Welcomeclass(),
-        'routescreen4':(context)=>homepageClass(),
-        'routescreen5':(context)=>scondpageclass(),
+        'routescreen3':(context)=>homepageClass(),
+        'routescreen4':(context)=>scondpageclass()
+       // 'routescreen5':(context)=>scondpageclass(),
 
 
       },
       debugShowCheckedModeBanner: false,
-      home:loginclass()
+      home:loginclass(),
     );
   }
 }

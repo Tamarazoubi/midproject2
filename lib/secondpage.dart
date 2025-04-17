@@ -13,8 +13,15 @@ class _scondpageclassState extends State<scondpageclass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(child:
-      Column(
+      appBar: AppBar(
+        backgroundColor:     Color(0xFFEfaebd6),
+        title: Row(
+          children: [
+
+          ],
+        ),
+      ),
+      body: Column(
         children: [
           Expanded(
             child: GridView.builder(
@@ -66,7 +73,7 @@ class _scondpageclassState extends State<scondpageclass> {
           )
         ],
       ),
-      ),
+      backgroundColor:     Color(0xFFEfaebd6),
     );
   }
 }

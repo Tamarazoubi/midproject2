@@ -50,7 +50,7 @@ class _WelcomeclassState extends State<Welcomeclass> {
          SizedBox(
            height: 100,
          ),
-         Lottie.network('https://lottie.host/526ad1f7-2aba-4d26-8219-9dbc5e7dd18d/gUI8MfBc09.json'),
+     //    Lottie.network('https://lottie.host/526ad1f7-2aba-4d26-8219-9dbc5e7dd18d/gUI8MfBc09.json'),
 SizedBox(
   height: 150,
 ),
