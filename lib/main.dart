@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:midproject2/secondpage.dart';
 
+import 'Textflield.dart';
+import 'Welcome.dart';
+import 'firstpage.dart';
 import 'homepage.dart';
 
 
@@ -22,8 +26,16 @@ class _myAppState extends State<myApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: {
+        'routescreen2':(context)=>textfeildclass(),
+        'routescreen3':(context)=>Welcomeclass(),
+        'routescreen4':(context)=>homepageClass(),
+        'routescreen5':(context)=>scondpageclass(),
+
+
+      },
       debugShowCheckedModeBanner: false,
-      home:homepageClass() ,
+      home:loginclass()
     );
   }
 }
