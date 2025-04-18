@@ -33,7 +33,7 @@ class _loginclassState extends State<loginclass> {
           padding: const EdgeInsets.all(8.0),
           child: Card(
           color:   Color(0xFFEE7BC91),
-            child: Text(" Ajda Coffee",
+            child: Text(" MT Coffee",
               style: TextStyle(
                 fontSize: 40,
                 fontWeight: FontWeight.bold,
@@ -98,7 +98,7 @@ class _loginclassState extends State<loginclass> {
                 : Listtilefun(Icon(Icons.local_drink), Text("Drink"))),
             InkWell(
                 onTap: (){
-                  Navigator.of(context).restorablePushReplacementNamed('routescreen4');
+                  Navigator.of(context).pushNamed('routescreen4');
                 },
 
 
