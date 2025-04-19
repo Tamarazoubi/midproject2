@@ -5,6 +5,7 @@ import 'Textflield.dart';
 import 'Welcome.dart';
 import 'firstpage.dart';
 import 'homepage.dart';
+import 'navgtionbar.dart';
 
 
 
@@ -29,13 +30,13 @@ class _myAppState extends State<myApp> {
       routes: {
         'routescreen2':(context)=>textfeildclass(),
         'routescreen3':(context)=>homepageClass(),
-        'routescreen4':(context)=>scondpageclass()
+        'routescreen4':(context)=>scondpageclass(),
        // 'routescreen5':(context)=>scondpageclass(),
 
 
       },
       debugShowCheckedModeBanner: false,
-      home:loginclass(),
+      home:navgtionbarclass()
     );
   }
 }

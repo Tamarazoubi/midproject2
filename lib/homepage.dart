@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:midproject2/product.dart';
+
+import 'cart.dart';
 class homepageClass extends StatefulWidget {
   const homepageClass({super.key});
 
@@ -8,17 +11,25 @@ class homepageClass extends StatefulWidget {
 }
 
 class _homepageClassState extends State<homepageClass> {
+
+
+
   @override
+
+  List <String>img = [
+    'asset/imges/Espresso.jpg',
+    'asset/imges/hot chocolate.jpg',
+    'asset/imges/hot latte.jpg',
+    'asset/imges/iced amricano.jpg',
+    'asset/imges/icedlatte.jpg'
+  ];
+  List<bool>isfav=
+  List.generate(5, (index)=>false);
+
   Widget build(BuildContext context) {
     final arg=ModalRoute.of(context)?.settings.arguments;toString();
     Color c;
-    List <String>img = [
-      'asset/imges/Espresso.jpg',
-      'asset/imges/hot chocolate.jpg',
-      'asset/imges/hot latte.jpg',
-      'asset/imges/iced amricano.jpg',
-      'asset/imges/icedlatte.jpg'
-    ];
+
     List<String>name = [
       'Esprsso(2jd) ',
       'hotchocolate(3jd)',
@@ -26,6 +37,16 @@ class _homepageClassState extends State<homepageClass> {
       'icedamricano(2jd)',
       'icedlatte(3jd)'
     ];
+    List<product>favoriteproduct=[];
+    List<product>allproduct=[
+      product(img: 'asset/imges/Espresso.jpg', name: 'Esprsso', price:2),
+      product(img: 'asset/imges/hot chocolate.jpg', name: 'hotchocolate', price:3),
+      product(img: 'asset/imges/hot latte.jpg', name: 'hotlatte', price:2),
+      product(img: 'asset/imges/iced amricano.jpg', name: 'icedamricano', price:2),
+      product(img: 'asset/imges/icedlatte.jpg', name: 'icedlatte', price:3),
+    ];
+
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor:     Color(0xFFEfaebd6),
@@ -49,7 +70,7 @@ class _homepageClassState extends State<homepageClass> {
               child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2),
-                itemCount: img.length,
+                itemCount: allproduct.length,
                 itemBuilder: (context, index) {
                   return Card(
                     child: SingleChildScrollView(
@@ -75,18 +96,38 @@ class _homepageClassState extends State<homepageClass> {
                                 width: double.infinity,
                               ),
 
-                                IconButton(onPressed: (){
+                                IconButton(
+                                  onPressed: (){
 
 
                                 }, icon: Container(
 
-                                  child: Icon(Icons.favorite,
-                                    color: Colors.black,
+                                  child: InkWell(
+                                    child:isfav[index] ? Icon(Icons.favorite,color: Colors.red,
+                                    ) :Icon(Icons.favorite_outlined
+
+                                    ),
+                                    onTap: (){
+                                      setState(() {
+                                        favoriteproduct.add(allproduct[index]);
+                                 isfav[index]=! isfav[index] ;
+                                 if(isfav[index]==true) {
+                                  // favoriteproduct.add(allproduct[index]);
+                                   Navigator.push(context, MaterialPageRoute(
+                                       builder: (context) =>
+
+                                           cartclass(
+                                             favoriteproducts: favoriteproduct,)));
+                                 }
+
+
+                                      });
+                                    },
                                   ),
                                 )
                                   ,
                                 )
-                  ],
+                                      ],
                             ),
 
                             Padding(padding: const EdgeInsets.all(8.0),
