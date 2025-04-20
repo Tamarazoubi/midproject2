@@ -68,13 +68,13 @@ appBar: AppBar(
             SizedBox(height: 40,),
             TextFormField(
               obscureText: true,
-             // validator: (passward){
-            //   if(!(checkpassward(passward!))){
-            //     return 'not vaild';
-           //  }
-           //  else
-           //     return 'vaild';
-           //  },
+              validator: (passward){
+              if(!(checkpassward(passward!))){
+                return 'not vaild';
+             }
+             else
+               return 'vaild';
+             },
               decoration: InputDecoration(
 
                   label: Text("passward",
@@ -106,14 +106,16 @@ appBar: AppBar(
                     height: 40,
                   ),
                   ElevatedButton(onPressed: () {
-                //   if (formkey.currentState!.validate())
+               //    if (formkey.currentState!.validate()) {
+                    Navigator.of(context).pushNamed(
+                          'routescreen3');
+            //        }
 
-                      Navigator.of(context).pushNamed(
-                        'routescreen3');
+                  },
 
-       //     }
 
-    },
+
+
                     style: ElevatedButton.styleFrom(
                        backgroundColor: Color(0xFFEE7BC91)
                       ),
@@ -122,6 +124,7 @@ appBar: AppBar(
                         color: Colors.black,
                         fontWeight: FontWeight.bold
                       ),))
+
                 ],
             )
 
