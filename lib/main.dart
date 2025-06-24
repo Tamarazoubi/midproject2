@@ -38,7 +38,7 @@ class _myAppState extends State<myApp> {
 
       },
       debugShowCheckedModeBanner: false,
-      home:homepageClass(),
+      home:SplachScreenClass()
     );
   }
 }
