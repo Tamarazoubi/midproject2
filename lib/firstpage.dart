@@ -4,6 +4,7 @@ import 'package:midproject2/secondpage.dart';
 
 import 'Textflield.dart';
 import 'homepage.dart';
+import 'navgtionbar.dart';
 class loginclass extends StatefulWidget {
   const loginclass({super.key});
 
@@ -48,7 +49,7 @@ class _loginclassState extends State<loginclass> {
       padding: const EdgeInsets.all(8.0),
       child: Card(
       color:   Color(0xFFEE7BC91),
-        child: Text(" MT Coffee",
+        child: Text(" BLK Coffee",
           style: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.bold,
@@ -84,50 +85,7 @@ class _loginclassState extends State<loginclass> {
     ),
           ),
         ),
-      drawer: Drawer(
-        backgroundColor: Color(0xFFEfaebd6),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 100,
-            ),
-            InkWell(
-                onTap: (){
-                  Navigator.of(context).pushNamed('routescreen2');
-                },
-                child: Listtilefun(Icon(Icons.app_registration), Text("Registration"),
-
-            )
-
-
-            ),
-            InkWell(
-
-              onTap: (){
-
-                Navigator.of(context).pushNamed('routescreen3');
-              },
-
-                child
-
-                : Listtilefun(Icon(Icons.local_drink), Text("Drink"))),
-            InkWell(
-                onTap: (){
-                  Navigator.of(context).pushNamed('routescreen4');
-                },
-
-
-                child: Listtilefun(Icon(IconData(0xf869, fontFamily: 'MaterialIcons')), Text("Sweet"))),
-          ],
-        ),
-      ),
-
-    );
-  }
-  Widget Listtilefun(Icon c,Text tx){
-    return ListTile(
-      leading:c ,
-      title:tx ,
+  //    bottomNavigationBar: navgtionbarclass(),
     );
   }
 }

@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:midproject2/customdrawer.dart';
 import 'package:midproject2/product.dart';
 
 import 'cart.dart';
@@ -108,10 +109,25 @@ setState(() {
           )
         ],
       ),
-      backgroundColor:     Color(0xFFEfaebd6),
+        drawer:Customdrawer(),
+
+
+        backgroundColor:     Color(0xFFEfaebd6),
     );
   }
-}
+
+
+
+
+
+  }
+  Widget Listtilefun(Icon c,Text tx){
+    return ListTile(
+      leading:c ,
+      title:tx ,
+    );
+  }
+
 
 
 

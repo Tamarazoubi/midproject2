@@ -1,9 +1,8 @@
-class product{
- final String name;
- final double? price;
- final String img;
+class product {
+  String name;
+  double price;
+  String img;
 
 
-  product({required this.img,required this.name,required this.price});
-
+  product({required this.img, required this.name, required this.price});
 }

@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:midproject2/secondpage.dart';
+import 'package:midproject2/splach_screen.dart';
 
 import 'Textflield.dart';
 import 'Welcome.dart';
+import 'callnumber.dart';
 import 'firstpage.dart';
 import 'homepage.dart';
 import 'navgtionbar.dart';
@@ -31,12 +33,12 @@ class _myAppState extends State<myApp> {
         'routescreen2':(context)=>textfeildclass(),
         'routescreen3':(context)=>homepageClass(),
         'routescreen4':(context)=>scondpageclass(),
-       // 'routescreen5':(context)=>scondpageclass(),
+      'routescreen5':(context)=>Callnumber(),
 
 
       },
       debugShowCheckedModeBanner: false,
-      home:navgtionbarclass()
+      home:homepageClass(),
     );
   }
 }

@@ -10,7 +10,9 @@ class textfeildclass extends StatefulWidget {
 class _textfeildclassState extends State<textfeildclass> {
   final formkey=GlobalKey<FormState>();
   bool ischeeck=false;
+  bool isclacked=false;
   TextEditingController c1=TextEditingController();
+  TextEditingController c2 = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,7 @@ appBar: AppBar(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
           children: [
            // Lottie.network('https://lottie.host/a85ac653-62ee-45aa-b691-934300f5ed55/dQzAvyUmZj.json'),
-        Lottie.network('https://lottie.host/14bc3144-1776-4de4-9594-ba6bc062e3aa/xhAbCFovEp.json'),
+      //  Lottie.network('https://lottie.host/14bc3144-1776-4de4-9594-ba6bc062e3aa/xhAbCFovEp.json'),
             Form(
                 key: formkey,
 
@@ -38,15 +40,22 @@ appBar: AppBar(
                 children: [
             Center(
               child: TextFormField(
+                validator: (c1){
+                  if(!(checkemail(c1!))){
+                    return 'not vaild';
+                  }
+                  else
+                    return null;
+                },
                 controller: c1,
               decoration: InputDecoration(
-                label: Text("Your Name",
+                label: Text("Your Email",
                 style: TextStyle(
                   fontSize: 20,
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),),
-                hintText: " Name",
+                hintText: " example@domain.com",
                 prefixIcon: Icon(Icons.email),
                 enabledBorder: OutlineInputBorder(
               borderSide: BorderSide(
@@ -67,13 +76,15 @@ appBar: AppBar(
             ),
             SizedBox(height: 40,),
             TextFormField(
-              obscureText: true,
-              validator: (passward){
-              if(!(checkpassward(passward!))){
+              controller:c2 ,
+
+              obscureText: !isclacked,
+              validator: (c2){
+              if(!(checkpassward(c2!))){
                 return 'not vaild';
              }
              else
-               return 'vaild';
+               return null;
              },
               decoration: InputDecoration(
 
@@ -83,8 +94,19 @@ appBar: AppBar(
                      color: Colors.black,
                     fontWeight: FontWeight.bold
                   ),),
-                  suffixIcon: Icon(Icons.remove_red_eye_sharp),
+                  suffixIcon: InkWell(
+                      onTap: (){
+                        setState(() {
+                          isclacked=! isclacked;
+                        });
+                      },
+
+                      child:isclacked? Icon(Icons.remove_red_eye_sharp)
+
+                  :Icon(Icons.visibility_off)),
+
                   hintText: "*************",
+
                   prefixIcon: Icon(Icons.password),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(
@@ -106,14 +128,11 @@ appBar: AppBar(
                     height: 40,
                   ),
                   ElevatedButton(onPressed: () {
-               //    if (formkey.currentState!.validate()) {
-                    Navigator.of(context).pushNamed(
-                          'routescreen3');
-            //        }
+                 if(formkey.currentState!.validate()){
+                Navigator.of(context).pushNamed('routescreen3');
+                 }
 
                   },
-
-
 
 
                     style: ElevatedButton.styleFrom(

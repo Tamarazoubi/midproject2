@@ -21,9 +21,10 @@ class _navgtionbarclassState extends State<navgtionbarclass> {
 
 
   List<Widget>listofwidget=[
-    loginclass(),
 
-    textfeildclass(),
+
+
+
     homepageClass(),
     scondpageclass(),
   ];
@@ -33,12 +34,7 @@ class _navgtionbarclassState extends State<navgtionbarclass> {
       bottomNavigationBar:BottomNavigationBar(
 
       items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home),label:"Home" ),
-      //  BottomNavigationBarItem(icon: Icon(Icons.shopping_cart),label:"cart" ),
-        BottomNavigationBarItem(icon: Icon(Icons.app_registration),label:"Registration",
-            backgroundColor: Color(0xFFEfaebd6),
-            activeIcon: Icon(Icons.add)
-        ),
+
         BottomNavigationBarItem(icon: Icon(Icons.local_drink),label:"Drink" ),
         BottomNavigationBarItem(icon:Icon(IconData(0xf869, fontFamily: 'MaterialIcons')),label:"Sweet" ),
       ],

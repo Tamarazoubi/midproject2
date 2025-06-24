@@ -1,10 +1,13 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:midproject2/favoritiesprovider.dart';
 import 'package:midproject2/product.dart';
 
 
 class cartclass extends StatefulWidget {
  final List<product> favoriteproducts;
-  cartclass({required this.favoriteproducts}) ;
+  cartclass( { required this.favoriteproducts}) ;
 
   @override
   State<cartclass> createState() => _cartclassState();
@@ -18,7 +21,9 @@ class _cartclassState extends State<cartclass> {
         title: Text("cart"),
 
       ),
-      body: ListView.builder(
+      body:
+
+      ListView.builder(
           itemCount: widget.favoriteproducts.length,
 
           itemBuilder:(context,index){
