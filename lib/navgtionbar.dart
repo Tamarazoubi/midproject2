@@ -1,54 +1,66 @@
 import 'package:flutter/material.dart';
-import 'package:midproject2/cart.dart';
-import 'package:midproject2/firstpage.dart';
+import 'package:dot_curved_bottom_nav/dot_curved_bottom_nav.dart';
 import 'package:midproject2/product.dart';
 import 'package:midproject2/secondpage.dart';
+import 'package:midproject2/var.dart';
 
-import 'Textflield.dart';
+import 'Homescreen.dart';
+import 'bakeryitemes.dart';
+import 'cart.dart';
+import 'cartscreen.dart';
+import 'favorite screen.dart';
 import 'homepage.dart';
-class navgtionbarclass extends StatefulWidget {
-  const navgtionbarclass({super.key});
+class Navgtionbar extends StatefulWidget {
+  const Navgtionbar({super.key});
 
   @override
-  State<navgtionbarclass> createState() => _navgtionbarclassState();
+  State<Navgtionbar> createState() => _NavgtionbarState();
 }
+List<Widget>icons=[
+  Icon(Icons.local_drink),
+
+  Icon(Icons.favorite),
+  Icon(IconData(0xf869, fontFamily: 'MaterialIcons')),
+Icon(Icons.bakery_dining),
 
 
-class _navgtionbarclassState extends State<navgtionbarclass> {
+];
+//List<product>fav1=[];
+int indx=0;
+List<Widget>screen=[
+homepageClass(fav: favoriteproduct,
+),
+  Favoritescreen(favoriteproducts: favoriteproduct,),
+  scondpageclass(fav: favoriteproduct,),
+  Bakeryitemes(fav: favoriteproduct,),
+
+
+];
+class _NavgtionbarState extends State<Navgtionbar> {
   @override
-  int indix=0;
-
-
-
-  List<Widget>listofwidget=[
-
-
-
-
-    homepageClass(),
-    scondpageclass(),
-  ];
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFEE7BC91),
+bottomNavigationBar:Container(
+  height: 95,
 
-      bottomNavigationBar:BottomNavigationBar(
+  child: DotCurvedBottomNav(
+    indicatorSize: 50,
 
-      items: [
+    items:icons,
+  backgroundColor:Color(0xcdEE7BC91),
+  indicatorColor:Color(0xcdffedd8) ,
+  selectedIndex: indx,
+    onTap: (int newvalue){
+    setState(() {
+      indx=newvalue;
+    });
+    },
 
-        BottomNavigationBarItem(icon: Icon(Icons.local_drink),label:"Drink" ),
-        BottomNavigationBarItem(icon:Icon(IconData(0xf869, fontFamily: 'MaterialIcons')),label:"Sweet" ),
-      ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.brown,
-        onTap: (v){
-       setState(() {
-         indix=v;
-       });
-
-        },
-currentIndex: indix,
-      ),
-      body: listofwidget[indix],
+  ),
+) ,
+body: screen[indx],
     );
+
   }
 }

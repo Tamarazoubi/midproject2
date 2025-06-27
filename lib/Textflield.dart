@@ -30,7 +30,7 @@ appBar: AppBar(
         child: Column(mainAxisAlignment: MainAxisAlignment.center,
           children: [
            // Lottie.network('https://lottie.host/a85ac653-62ee-45aa-b691-934300f5ed55/dQzAvyUmZj.json'),
-      //  Lottie.network('https://lottie.host/14bc3144-1776-4de4-9594-ba6bc062e3aa/xhAbCFovEp.json'),
+        Lottie.network('https://lottie.host/14bc3144-1776-4de4-9594-ba6bc062e3aa/xhAbCFovEp.json'),
             Form(
                 key: formkey,
 
@@ -129,7 +129,7 @@ appBar: AppBar(
                   ),
                   ElevatedButton(onPressed: () {
                  if(formkey.currentState!.validate()){
-                Navigator.of(context).pushNamed('routescreen3');
+                Navigator.of(context).pushNamed( 'routescreen6');
                  }
 
                   },

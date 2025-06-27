@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Textflield.dart';
+import 'ceditcard.dart';
 import 'firstpage.dart';
 
 class Customdrawer extends StatefulWidget {
@@ -51,61 +52,35 @@ class _CustomdrawerState extends State<Customdrawer> {
 
 
             ),
+
             InkWell(
-
                 onTap: () {
-                  Navigator.of(context).pushNamed('routescreen3');
+                  Navigator.of(context).pushNamed('routescreen10');
                 },
-
-                child
-                    : Listtilefun(Icon(Icons.settings), Text("SETTINGS",
+                child: Listtilefun(Icon(Icons.credit_card), Text("Visa payment",
                   style: TextStyle(
                       fontSize: 17,
                       fontWeight: FontWeight.bold
-                  ),))),
+                  ),),
+
+                )
+            ),
+
             InkWell(
                 onTap: () {
-                  Navigator.of(context).pushNamed('routescreen4');
+                  Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context)=>loginclass()),
+                        (Route<dynamic>route)=>false,
+                  );
                 },
+                child: Listtilefun(Icon(Icons.logout), Text("Logout",
+                  style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.bold
+                  ),),
 
-
-                child: Listtilefun(
-                    Icon(IconData(0xf869, fontFamily: 'MaterialIcons')),
-                    Text("Sweet",
-                      style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.bold
-                      ),))),
-
-    InkWell(
-    onTap: () {
-    Navigator.of(context).pushNamed('routescreen3');
-    },
-    child: Listtilefun(Icon(Icons.local_drink), Text("Drink",
-      style: TextStyle(
-          fontSize: 17,
-          fontWeight: FontWeight.bold
-      ),),
-
-    )
-    ),
-    InkWell(
-    onTap: () {
-    Navigator.of(context).pushAndRemoveUntil(
-    MaterialPageRoute(builder: (context)=>loginclass()),
-    (Route<dynamic>route)=>false,
-    );
-    },
-    child: Listtilefun(Icon(Icons.logout), Text("Logout",
-    style: TextStyle(
-      fontSize: 17,
-      fontWeight: FontWeight.bold
-    ),),
-
-    )
-    ),
-
-
+                )
+            ),
     ],
         )
 

@@ -15,11 +15,7 @@ class loginclass extends StatefulWidget {
 class _loginclassState extends State<loginclass> {
   @override
   int indix=0;
-  List<Widget>buildscreen=[
-    textfeildclass(),
-    homepageClass(),
-    scondpageclass(),
-  ];
+
   Widget build(BuildContext context) {
     return Scaffold(
     backgroundColor:     Color(0xFFEfaebd6),

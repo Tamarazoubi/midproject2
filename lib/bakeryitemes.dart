@@ -1,72 +1,51 @@
 import 'package:flutter/material.dart';
-import 'package:lottie/lottie.dart';
 import 'package:midproject2/product.dart';
-import 'package:midproject2/secondpage.dart';
 import 'package:midproject2/var.dart';
 
-import 'Textflield.dart';
-import 'cart.dart';
 import 'customdrawer.dart';
-import 'navgtionbar.dart';
-class homepageClass extends StatefulWidget {
+class Bakeryitemes extends StatefulWidget {
   List<product>fav=[];
-  homepageClass({required this.fav});
+   Bakeryitemes({required this.fav});
 
   @override
-
-  State<homepageClass> createState() => _homepageClassState();
+  State<Bakeryitemes> createState() => _BakeryitemesState();
 }
 
-class _homepageClassState extends State<homepageClass> {
-
-
+class _BakeryitemesState extends State<Bakeryitemes> {
   @override
-
-
   List <String>img = [
-    'asset/imges/Espresso.jpg',
-    'asset/imges/hot chocolate.jpg',
-    'asset/imges/hot latte.jpg',
-    'asset/imges/iced amricano.jpg',
-    'asset/imges/icedlatte.jpg'
+    'asset/imges2/bread1.jpg',
+    'asset/imges2/cakes.webp',
+    'asset/imges2/croissant.jpg',
+    'asset/imges2/dount.jpg',
+    'asset/imges2/mmm.jpg',
+
   ];
-
-  List<product>p=[product(img: 'asset/imges/Espresso.jpg', name:'Esprsso' , price: 2.0),
-  product(img:'asset/imges/hot chocolate.jpg' , name:'hotchocolate', price: 3),
-  product(img:'asset/imges/hot latte.jpg' , name: 'hotlatte', price: 2),
-  product(img: 'asset/imges/iced amricano.jpg' , name:'icedamricano', price: 2),
-  product(img: 'asset/imges/icedlatte.jpg', name: 'icedlatte', price: 3)];
-
   List<bool>isfav =
   List.generate(5, (index) => false);
 
+
+    List<String>name = [
+      'bread(1jd) ',
+      'cakes(3jd)',
+      'croissant(2jd)',
+      'dount(2jd)',
+      'pastries(1jd)'
+
+    ];
+  List<product>allproduct = [
+    product(img:  'asset/imges2/bread1.jpg', name: 'Bread', price: 1),
+    product(
+        img:'asset/imges2/cakes.webp',  name: 'cakes', price: 3),
+    product(img:'asset/imges2/croissant.jpg' , name: 'croissant', price: 2),
+    product(
+        img:  'asset/imges2/dount.jpg',  name: 'dount', price: 2),
+
+    product(
+        img:   'asset/imges2/mmm.jpg', name: 'pastries', price: 1),
+  ];
+
   Widget build(BuildContext context) {
-    final arg = ModalRoute
-        .of(context)
-        ?.settings
-        .arguments;
-    toString();
-    Color c;
-
-     List<String>name = [
-      'Esprsso(2jd) ',
-      'hotchocolate(3jd)',
-      'hotlatte(2jd)',
-      'icedamricano(2jd)',
-      'icedlatte(3jd)'
-    ];
-
-    List<product>allproduct = [
-      product(img: 'asset/imges/Espresso.jpg', name: 'Esprsso', price: 2),
-      product(
-          img: 'asset/imges/hot chocolate.jpg', name: 'hotchocolate', price: 3),
-      product(img: 'asset/imges/hot latte.jpg', name: 'hotlatte', price: 2),
-      product(
-          img: 'asset/imges/iced amricano.jpg', name: 'icedamricano', price: 2),
-      product(img: 'asset/imges/icedlatte.jpg', name: 'icedlatte', price: 3),
-    ];
-
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Color(0xFFEfaebd6),
@@ -122,23 +101,23 @@ class _homepageClassState extends State<homepageClass> {
 
                                   }, icon: Container(
 
-                                  child:  InkWell(
-                                      child:  isfav[index] ? Icon(Icons.favorite,color: Colors.red,
-                                      ) :Icon(Icons.favorite_outlined,
-                                      ),
-                                      onTap: (){
-                                        setState(() {
-                                    isfav[index]=!isfav[index];
-                                    if(isfav[index]){
-                                      favoriteproduct.add(allproduct[index]);
-                                    }
-                                    else{
-                                      favoriteproduct.remove(allproduct[index]);
-                                    }
-                                        });
+                                    child:  InkWell(
+                                        child:  isfav[index] ? Icon(Icons.favorite,color: Colors.red,
+                                        ) :Icon(Icons.favorite_outlined,
+                                        ),
+                                        onTap: (){
+                                          setState(() {
+                                            isfav[index]=!isfav[index];
+                                            if(isfav[index]){
+                                              favoriteproduct.add(allproduct[index]);
+                                            }
+                                            else{
+                                              favoriteproduct.remove(allproduct[index]);
+                                            }
+                                          });
 
-                                      }
-                                  )
+                                        }
+                                    )
                                 )
                                   ,
                                 )
@@ -149,7 +128,7 @@ class _homepageClassState extends State<homepageClass> {
                               child: Text(name[index],
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
-                                  fontSize: 15,
+                                  fontSize: 20,
 
                                 ),),
 
@@ -180,3 +159,7 @@ class _homepageClassState extends State<homepageClass> {
     );
   }
 }
+
+
+
+
