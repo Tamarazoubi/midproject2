@@ -42,7 +42,7 @@ appBar: AppBar(
               child: TextFormField(
                 validator: (c1){
                   if(!(checkemail(c1!))){
-                    return 'not vaild';
+                    return null;
                   }
                   else
                     return null;
@@ -81,7 +81,7 @@ appBar: AppBar(
               obscureText: !isclacked,
               validator: (c2){
               if(!(checkpassward(c2!))){
-                return 'not vaild';
+                return null;
              }
              else
                return null;

@@ -4,6 +4,7 @@ import 'package:midproject2/secondpage.dart';
 import 'package:midproject2/splach_screen.dart';
 
 import 'Textflield.dart';
+import 'TotalPrice.dart';
 import 'Welcome.dart';
 import 'bakeryitemes.dart';
 import 'callnumber.dart';
@@ -42,6 +43,7 @@ class _myAppState extends State<myApp> {
       'routescreen8':(context)=> Bakeryitemes(fav: [],),
       'routescreen9':(context)=> Bakeryitemes(fav: [],),
       'routescreen10':(context)=> Ceditcard(),
+      'routescreen11':(context)=>  Totalprice(favoriteproducts: [],),
 
 
       },

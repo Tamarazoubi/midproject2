@@ -141,9 +141,22 @@ class _CeditcardState extends State<Ceditcard> {
               SizedBox(
                 height: 40,
               ),
+
               ElevatedButton(onPressed: () {
                 if(formkey.currentState!.validate()){
-                  Navigator.of(context).pushNamed(  'routescreen6');
+                  ScaffoldMessenger.of(context).showSnackBar(
+
+                      SnackBar(content:  Text("Payment Done successfully",
+                  style: TextStyle(
+                    fontSize: 25,
+                    fontWeight: FontWeight.bold,
+                  ),),
+                 duration: Duration(seconds: 3), ));
+               Future.delayed(Duration(seconds: 3),(){
+                 Navigator.of(context).pushNamed(  'routescreen6');
+               });
+
+
                 }
           
               },
@@ -156,9 +169,10 @@ class _CeditcardState extends State<Ceditcard> {
                     style: TextStyle(
                         color: Colors.black,
                         fontWeight: FontWeight.bold
-                    ),))
-          
-          ],
+                    ),)),
+
+
+            ],
           ),
         ),
       ),
